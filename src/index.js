@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+// React Toastify
+import 'react-toastify/dist/ReactToastify.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
