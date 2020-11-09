@@ -1,19 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { URL_API } from './utils/constants';
 
-import { ToastContainer, toast } from 'react-toastify';
-import { Button } from 'react-bootstrap';
+import useFetch from './hooks/useFetch';
+
+import TopMenu from "./components/TopMenu";
+import Products from './components/Products';
 
 function App() {
 
-  const openToast = () => {
-    toast.error('Hello World !');
-  }
+  const products = useFetch(URL_API, null);
+
   return (
     <div className="App">
-      <Button variant="danger" onClick={openToast} style={{ marginTop: '20px' }}>Click</Button>
-      <ToastContainer />
+      <TopMenu />
+      <Products products={products} />
     </div>
   );
 }
