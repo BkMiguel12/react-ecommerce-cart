@@ -2,24 +2,30 @@ import React from 'react';
 
 import { Container, Row } from 'react-bootstrap';
 
+import Product from '../Product';
 import Loading from '../Loading';
 
 export default function Products(props) {
 
-    const { products: { loading, error, result } } = props;
+    const { 
+        products: { loading, error, result },
+        addProductToCart
+    } = props;
 
     console.log(result);
     return (
-        <Container>
+        <Container className='py-3'>
             <Row>
-                {loading || result ? (
+                {loading || !result ? (
                     <Loading />
                 ) : (
-                    <ul>
+                    <>
                         {
-                            result.map((product, idx) => ( <li key={idx}>{ product.name }</li> ))
+                            result.map((product, idx) => ( 
+                                <Product key={idx} product={product} addProductToCart={addProductToCart} />
+                            ))
                         }
-                    </ul>
+                    </>
                 )}
             </Row>
         </Container>
