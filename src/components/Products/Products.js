@@ -12,7 +12,6 @@ export default function Products(props) {
         addProductToCart
     } = props;
 
-    console.log(result);
     return (
         <Container className='py-3'>
             <Row>

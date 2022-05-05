@@ -1,0 +1,72 @@
+.cart-button {
+    svg {
+        width: 2rem;
+        fill: #fff;
+    }
+}
+
+.cart-content {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #343a40;
+    height: 100vh;
+    text-align: left;
+    white-space: nowrap;
+    transition: width 1s;
+    z-index: 9;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem;
+        border-bottom: 1px solid #4f5256;
+        height: 5rem;
+
+        > div {
+            &:first-of-type {
+                display: flex;
+                svg {
+                    width: 1rem;
+                    margin-right: 1.2rem;
+                    fill: #fff;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                h3 {
+                    margin: 0;
+                    color: #fff;
+                }
+            }
+        }
+
+        button {
+            margin: 0;
+            color: #fff;
+            display: flex;;
+            align-items: center;
+            &:hover {
+                text-decoration: none;
+                color: #d20505;
+
+                svg {
+                    fill: #d20505;
+                }
+            }
+            &:focus {
+                box-shadow: none;
+                text-decoration: none;
+            }
+
+            svg {
+                width: 1.8rem;
+                height: 1.8rem;
+                fill: #fff;
+                margin-left: 1rem;
+            }
+        }
+    }
+}

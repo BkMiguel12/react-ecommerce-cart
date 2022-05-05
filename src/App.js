@@ -27,15 +27,16 @@ function App() {
     productsIds.push(id);
     setproductsCart(productsIds);
     localStorage.setItem(STORAGE_PRODUCTS_CART, JSON.stringify(productsCart));
-
+    getProductsCart();
     toast.success(`Product ${name} added to cart`);
   }
 
   return (
     <div className="App">
-      <TopMenu />
+      <TopMenu productsCart={ productsCart } getProductsCart={ getProductsCart } />
       <Products products={products} addProductToCart={addProductToCart} />
       <ToastContainer 
+        position='bottom-left'
         newestOnTop
         autoClose={3000}
       />
