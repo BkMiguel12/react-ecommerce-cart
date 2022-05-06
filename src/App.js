@@ -25,6 +25,7 @@ function App() {
   const addProductToCart = (id, name) => {
     const productsIds = productsCart;
     productsIds.push(id);
+    productsIds.sort();
     setproductsCart(productsIds);
     localStorage.setItem(STORAGE_PRODUCTS_CART, JSON.stringify(productsCart));
     getProductsCart();
@@ -33,7 +34,11 @@ function App() {
 
   return (
     <div className="App">
-      <TopMenu productsCart={ productsCart } getProductsCart={ getProductsCart } />
+      <TopMenu 
+        productsCart={ productsCart } 
+        getProductsCart={ getProductsCart }
+        products={ products }
+      />
       <Products products={products} addProductToCart={addProductToCart} />
       <ToastContainer 
         position='bottom-left'

@@ -7,5 +7,7 @@ export const removeDuplicatesFromArray = array => {
 }
 
 export const removeItemFromArray = (item, array) => {
-    return array.filter(i => i !== item);
+    const elementToDelete = array.find(i => i === item);
+    array.splice(array.indexOf(elementToDelete), 1);
+    return array;
 }

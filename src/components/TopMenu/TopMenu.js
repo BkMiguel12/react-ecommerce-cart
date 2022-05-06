@@ -8,7 +8,7 @@ import Cart from '../Cart';
 import './TopMenu.scss';
 
 export default function TopMenu(props) {
-    const { productsCart, getProductsCart } = props;
+    const { productsCart, getProductsCart, products } = props;
     return (
         <Navbar bg="dark" variant="dark" className="top-menu">
             <Container>
@@ -16,7 +16,8 @@ export default function TopMenu(props) {
                 <BrandNav />
                 <Cart
                     productsCart={ productsCart } 
-                    getProductsCart={ getProductsCart } 
+                    getProductsCart={ getProductsCart }
+                    products={ products }
                 />
                 {/* Menu */}
                 {/* <MenuNav /> */}
