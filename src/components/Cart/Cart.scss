@@ -113,4 +113,32 @@
             }
         }
     }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            p {
+                &:first-of-type {
+                    font-size: 1.2rem;
+                }
+                &:last-of-type {
+                    font-weight: bold;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        button {
+            width: 100%;
+            
+        }
+    }
 }
